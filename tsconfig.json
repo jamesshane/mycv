@@ -1,0 +1,13 @@
+{
+    "files": [
+        "./src/APIClasses/ts/APImain.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "ES2015",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./@types/jquery"
+          ]
+    }
+}

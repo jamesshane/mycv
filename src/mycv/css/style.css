@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400");
 
-body{
-     font-family: 'Lato', sans-serif;
-}
 
 .page-navbar.navbar{
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .page-navbar .navbar-nav .nav-item a{
@@ -40,7 +36,7 @@ body{
 }
 
 .gradient{
-    background: linear-gradient(120deg, #7f70f5, #0ea0ff);
+    background: linear-gradient(120deg, #000428, #004e92);
     color: #fff !important;
 }
 

@@ -1,24 +1,5 @@
 
 
-.page-navbar.navbar{
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.page-navbar .navbar-nav .nav-item a{
-    font-weight: bold;
-}
-
-.page-navbar.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-}
-
-.page-navbar .logo{
-    font-size: 1.5rem;
-}
-
-.page-navbar.fixed-top + .page{
-    padding-top: 62px;
-}
 
 .download-template{
     color: #fff;

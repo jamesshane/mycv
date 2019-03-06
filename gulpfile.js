@@ -136,3 +136,20 @@ gulp.task("watch", [
   "watchimg",
   "watchscss"
 ]);
+
+var pdfMaker = require('pdf-maker');
+ 
+var template = './src/mycv/html/index.html';
+var pdfPath = './public/JamesShaneCV.pdf';
+var option =
+{
+  paperSize: {
+    format: 'A4',
+    orientation: 'portrait',
+    border: '1.8cm'
+  }
+};
+ 
+gulp.task("make-pdf",function () {
+  pdfMaker(template, pdfPath, option);
+});

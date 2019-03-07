@@ -88,10 +88,14 @@ gulp.task("ts-copy", function() {
 });
 
 gulp.task("scss-copy", function() {
-  return gulp
-    .src(paths.scsssrc)
+  var files = glob.sync(paths.scsssrc);
+  return merge(files.map(function(file) {
+    return gulp
+    .src(file)
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest(paths.scssdest));
+  })
+  );
 });
 
 gulp.task("default", [

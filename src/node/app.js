@@ -16,10 +16,12 @@ app.get('/example/b', function (req, res, next) {
 })
 
 var birds = require('./birds')
+var sendgrid = require('./sendgrid')(app);
 
 // ...
 
 app.use('/', birds)
+
 
 app.use("/", express.static("../../public",options));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

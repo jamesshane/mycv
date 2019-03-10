@@ -74,7 +74,7 @@ gulp.task("ts-copy", function() {
       })
         .plugin(tsify, { noImplicitAny: true })
         .bundle()
-        .pipe(source("APIClasses.js"))
+        .pipe(source("classes.js"))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(sourcemaps.init({ loadMaps: true }))

@@ -1,4 +1,4 @@
-import { classes } from "./classes";
+import { classes } from "./Classes";
 
 export class PasswordRecovery extends classes {
   protected submitBtn: any;

@@ -1,11 +1,11 @@
 import { classes } from "./Classes";
 
-export class Register extends classes {
+export class Contact extends classes {
   protected submitBtn: any;
 
   constructor() {
     super();
-    this.submitBtn = $("#submitregister");
+    this.submitBtn = $("#submitcontact");
     this.submitBtn.on("click", (e: Event) => this.SubmitButtonClick());
     this.clearBtn.on("click", (e: Event) => this.ResetButtonClick());
   }
@@ -17,6 +17,13 @@ export class Register extends classes {
 
     let status: boolean = true;
 
+    if (this.TestNameNotBlank()) {
+      //console.log("this.TestNameNotBlank()");
+      status = true;
+    } else {
+      status = false;
+    }
+
     if (this.TestEmailNotBlank()) {
       //console.log("this.TestEmailNotBlank()");
       status = this.TestEmailPatt();
@@ -24,33 +31,23 @@ export class Register extends classes {
       status = false;
     }
 
-    if (this.TestPhoneNotBlank()) {
-      //console.log("this.TestPhoneNotBlank()");
-      status = this.TestPhonePatt();
-    } else {
-      status = false;
-    }
-//console.log(this.TestRePasswordNotBlank());
-    if (this.TestPasswordNotBlank()) {
-      if (this.TestRePasswordNotBlank()) {
-        status = (this.TestPasswordPatt() && this.TestPasswordsMatch());
-      } else {
-        status = false;
-      }
+    if (this.TestMesgNotBlank()) {
+      //console.log("this.TestMesgNotBlank()");
+      status = true;
     } else {
       status = false;
     }
 
     if (status) {
-      console.log("good!");
+      //console.log("good!");
       this.ClearVal();
       this.submitBtn.attr('disabled', true);
-      var url = "/Users/CreateUser";
+      var url = "/sendgrid";
       var email = this.emailField.val();
-      var password = this.passwordField.val();
-      var phone = this.phoneField.val();
-      $.post(url, { Email: email, Password: password, Phone: phone }, function (data) {
-          //console.log(data);
+      var name = this.nameField.val();
+      var mesg = this.mesgField.val();
+      $.post(url, { emailp: email, namep: name, mesgp: mesg }, function (data) {
+          console.log(data);
            var dback = data.split(":");
            //console.log(dback[0]);
           if (dback[0].indexOf("USERMADE") > -1) {
@@ -68,6 +65,6 @@ export class Register extends classes {
           var subm = $("#submitregiser");
           subm.removeAttr("disabled");
       });
-    }
+     }
   }
 }

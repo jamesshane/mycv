@@ -15,6 +15,8 @@ export class classes extends Validation {
   protected loggedin: any;
   protected bigerror: any;
   protected userlocked: any;
+  protected mesgField: any;
+  protected nameField: any;
 
   constructor() {
     super();
@@ -27,12 +29,19 @@ export class classes extends Validation {
     let c = (window as any).getCookie("APIUser");
     //console.log(c);
     if (c !== "") {
-        this.loggedin.show();
+      this.loggedin.show();
+    } else {
+      this.loggedin.hide();
     }
-    else {
-        this.loggedin.hide();
-    }
-}
+  }
+
+  TestNameNotBlank(): boolean {
+    return !this.TestBlank(this.nameField, "name", "Name is required.");
+  }
+
+  TestMesgNotBlank(): boolean {
+    return !this.TestBlank(this.mesgField, "mesg", "Messege is required. At least say 'Hi.'");
+  }
 
   TestEmailNotBlank(): boolean {
     return !this.TestBlank(this.emailField, "email", "Email is required.");
@@ -95,10 +104,12 @@ export class classes extends Validation {
   }
 
   protected AttachElements() {
+    this.nameField = $("#name");
     this.emailField = $("#email");
     this.passwordField = $("#password");
     this.rePasswordField = $("#repassword");
     this.phoneField = $("#phone");
+    this.mesgField = $("#mesg");
     this.submitBtn = $("#submit");
     this.clearBtn = $("#clear");
     //console.log("attached elelements");
@@ -119,5 +130,7 @@ export class classes extends Validation {
     this.passwordField.val("");
     this.rePasswordField.val("");
     this.phoneField.val("");
+    this.nameField.val("");
+    this.mesgField.val("");
   }
 }

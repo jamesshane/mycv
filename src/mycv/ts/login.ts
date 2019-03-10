@@ -1,4 +1,4 @@
-import { classes } from "./classes";
+import { classes } from "./Classes";
 
 export class Login extends classes {
   protected submitBtn: any;

@@ -1,6 +1,6 @@
 {
     "files": [
-        "./src/APIClasses/ts/APImain.ts"
+        "./src/mycv/ts/Main.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

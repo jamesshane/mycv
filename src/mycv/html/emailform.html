@@ -39,24 +39,30 @@
                         <div class="row">
                             <div class="col-lg-5 mx-auto">
                                 <p id="bigerror" class="alert alert-danger">The was an error.</p>
-                                <form id="form"  onsubmit="return false;" novalidate>
+                                <p id="success" class="alert alert-success">Success! Email sent. <a href="/">Click here</a> to go back to CV.</p>
+                                <form id="cform"  onsubmit="return false;" novalidate>
 
                                     <input type="text" id="name" class="form-control" placeholder="Your Name"
                                         name="name"></input>
-                                        <div id="valemail" class="text-danger"></div>
+                                        <div id="valname" class="text-danger"></div>
                                     <br />
 
                                     <input type="text" id="email" class="form-control" placeholder="Your Email"
                                         name="email"></input>
                                         <div id="valemail" class="text-danger"></div>
                                     <br />
-                                    <textarea id="mesg" class="form-control" rows="8" placeholder="Message To Me"
+                                    <textarea id="mesg" class="form-control" rows="8" placeholder="Messege To Me"
                                         name="mesg"></textarea>
-                                        <div id="valemail" class="text-danger"></div>
+                                        <div id="valmesg" class="text-danger"></div>
                                     <br />
-                                    <br />
-                                    <input type="submit" class="btn btn-outline-primary" value="Submit"></input>
-
+                                    <div class="form-group-lg">
+                                        <div class="float-left">
+                                            <input type="submit" id="submitcontact" class="btn btn-outline-primary btn-lg" value="Register" />
+                                        </div>
+                                        <div class="float-right">
+                                            <input type="reset" id="clear" class="btn btn-outline-primary btn-lg" value="Clear" />
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

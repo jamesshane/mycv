@@ -12,6 +12,7 @@ $grad-end: #004e92;
 $educationPlaceLabelColor: #20c997;
 $timePeriod: #6c757d;
 $workPlaceLabelColor: #0ea0ff;
+$freelancePlaceLabelColor: #a00909;
 $borderSolid: solid;
 $borderDotted: dotted;
 $contactIconColor: #c9c9c9;
@@ -106,9 +107,18 @@ body {
     h3 {
       font-size: 1.3rem;
     }
-    .education.group {
-      .organization {
-        background-color: $educationPlaceLabelColor;
+    .education {
+      &.group {
+        .organization {
+          background-color: $educationPlaceLabelColor;
+        }
+      }
+    }
+    .freelance {
+      &.group {
+        .organization {
+          background-color: $freelancePlaceLabelColor;
+        }
       }
     }
     .group:not(:first-child) {
@@ -152,6 +162,11 @@ body {
       }
     }
     .education {
+      h3 {
+        font-weight: $bold;
+      }
+    }
+    .freelance {
       h3 {
         font-weight: $bold;
       }

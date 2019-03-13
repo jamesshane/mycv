@@ -107,6 +107,12 @@ gulp.task("default", [
   "scss-copy"
 ]);
 
+gulp.task("design", [
+  "html-copy",
+  "css-copy",
+  "scss-copy"
+]);
+
 // watch the files for changes and rebuild everything
 gulp.task("watchts", function() {
   gulp.watch(paths.tssrc, ["ts-copy"]);

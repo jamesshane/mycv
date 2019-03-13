@@ -179,6 +179,14 @@ body {
         font-size: 1.2em;
       }
     }
+    .contact {
+      .icon {
+        font-size: 1.3em;
+        color: $contactIconColor;
+        position: relative;
+        bottom: 4px;
+      }
+    }
   }
   .info-card {
     padding: 40px;

@@ -50,6 +50,7 @@ body {
 }
 
 .download-template {
+  visibility: hidden;
   color: $white;
   background-color: $pink;
   border: none;

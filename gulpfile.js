@@ -39,6 +39,9 @@ paths.cssdest = paths.webroot + "css";
 paths.scsssrc = paths.srcroot + "scss/*.scss";
 paths.scssdest = paths.webroot + "css";
 
+paths.pdfsrc = paths.srcroot + "pdf/*.pdf";
+paths.pdfdest = paths.webroot + "";
+
 gulp.task("html-copy", function() {
   return gulp.src(paths.htmlsrc).pipe(gulp.dest(paths.htmldest));
 });
@@ -49,6 +52,10 @@ gulp.task("css-copy", function() {
 
 gulp.task("img-copy", function() {
   return gulp.src(paths.imgsrc).pipe(gulp.dest(paths.imgdest));
+});
+
+gulp.task("pdf-copy", function() {
+  return gulp.src(paths.pdfsrc).pipe(gulp.dest(paths.pdfdest));
 });
 
 gulp.task("js-copy", function() {
@@ -104,7 +111,8 @@ gulp.task("default", [
   "js-copy",
   "css-copy",
   "img-copy",
-  "scss-copy"
+  "scss-copy",
+  "pdf-copy"
 ]);
 
 gulp.task("design", [
@@ -130,6 +138,10 @@ gulp.task("watchimg", function() {
   gulp.watch(paths.imgsrc, ["img-copy"]);
 });
 
+gulp.task("watchpdf", function() {
+  gulp.watch(paths.pdfsrc, ["pdf-copy"]);
+});
+
 gulp.task("watchcss", function() {
   gulp.watch(paths.csssrc, ["css-copy"]);
 });
@@ -144,13 +156,14 @@ gulp.task("watch", [
   "watchjs",
   "watchcss",
   "watchimg",
-  "watchscss"
+  "watchscss",
+  "watchpdf"
 ]);
 
 var pdfMaker = require('pdf-maker');
  
-var template = './src/mycv/html/index.html';
-var pdfPath = './public/JamesShaneCV.pdf';
+var template = './src/mycv/html/indexPDF.html';
+var pdfPath = './src/mycv/pdf/JamesShaneCV.pdf';
 var option =
 {
   paperSize: {

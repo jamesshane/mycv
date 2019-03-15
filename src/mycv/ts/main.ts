@@ -1,15 +1,17 @@
 
-import { Register } from "./Register";
-import { Login } from "./Login";
-import { PasswordRecovery } from "./PasswordRecovery";
-import { PasswordReset } from "./PasswordReset";
+// import { Register } from "./Register";
+// import { Login } from "./Login";
+// import { PasswordRecovery } from "./PasswordRecovery";
+// import { PasswordReset } from "./PasswordReset";
 import { Contact } from "./Contact";
+import { LogVisits } from "./LogVisits";
 
-let register = new Register();
-let login = new Login();
-let passwordrecovery = new PasswordRecovery();
-let passwordreset = new PasswordReset();
+// let register = new Register();
+// let login = new Login();
+// let passwordrecovery = new PasswordRecovery();
+// let passwordreset = new PasswordReset();
 let contact = new Contact();
+let logvisits = new LogVisits();
 
 let headerr:any;
 //headerr = $("header").hide();

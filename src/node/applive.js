@@ -24,13 +24,12 @@ app.get('/example/b', function (req, res, next) {
 
 var birds = require('./birds')
 var sendgrid = require('./sendgrid')(app);
-var db = require('./db')(app);
 
 // ...
 
 app.use('/', birds)
 
-app.use("/", express.static("../../public",homepage));
-app.use("/hireme", express.static("../../public",emailpage));
+app.use("/", express.static("/var/www/fuzzyspots.com/html",homepage));
+app.use("/hireme", express.static("/var/www/fuzzyspots.com/html",emailpage));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

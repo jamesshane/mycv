@@ -11,8 +11,11 @@ export class LogVisits extends classes {
     let status: boolean = true;
 
     if (status) {
-      $.getJSON("/getinfo", function(data) {
-        //console.log(JSON.stringify(data, null, 2));
+      //$.getJSON("/getinfo", function(data) {
+        $.getJSON("https://ipapi.co/json/", function(data) {
+          //console.log(JSON.stringify(data, null, 2));
+          //data=data2;
+        //});
         //console.log(data.ip);
         // {
         //   "ip": "73.3.187.220",
@@ -24,13 +27,11 @@ export class LogVisits extends classes {
         //   "postal": "80226",
         //   "org": "AS7922 Comcast Cable Communications, LLC"
         // }
-        data.path=$(location).attr('pathname');
-        data.created=(window as any).getActualFullDate();
+        data.path = $(location).attr("pathname");
+        data.created = (window as any).getActualFullDate();
         //console.log(data.path);
         var url = "/insertvisit";
-        $.post(url, data, function(
-          data
-        ) {
+        $.post(url, data, function(data) {
           //console.log(data);
           var dback = data.split(":");
           //console.log(dback[0]);

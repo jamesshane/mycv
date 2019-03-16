@@ -36,11 +36,11 @@ module.exports = function(app) {
   });
 
   app.get("/getinfo", urlencodedParser, function(req,res) {
-    request('https://ipinfo.io/json', function (error, response, html) {
-      if (!error && response.statusCode == 200) {
-        console.log(html);
-        res.send(html);
-      }
-    });
+    //request('https://ipinfo.io/json', function (error, response, html) {
+      //if (!error && response.statusCode == 200) {
+        //console.log(html);
+        res.send("not used");
+      //}
+    //});
   });
 };

@@ -24,6 +24,7 @@ app.get('/example/b', function (req, res, next) {
 
 var birds = require('./birds')
 var sendgrid = require('./sendgrid')(app);
+var db = require('./db')(app);
 
 // ...
 

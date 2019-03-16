@@ -6,6 +6,7 @@ $black: #000;
 $white: #fff;
 $whiteOff: #eee;
 $whiteOffTwo: #ddd;
+$gray: #a9a9a9;
 $pink: #ed36ad;
 $light-pink: #fb5ec4;
 $grad-start: #000428;
@@ -54,8 +55,8 @@ body {
 
 .download-template {
   // visibility: hidden;
-  color: $white;
-  background-color: $pink;
+    color: $gray;
+    background-color: $black;
   border: none;
   font-weight: $bold;
   text-transform: uppercase;
@@ -63,7 +64,8 @@ body {
   padding: 10px 24px;
   border-radius: 40px;
   &:hover {
-    background-color: $light-pink;
+  color: $black;
+  background-color: $gray;
   }
 }
 

@@ -21,4 +21,5 @@ interface Window {
     getCookie(cname: string): string;
     sendResetMail(to:string, subject:string, message:string): void;
     getQuerystring(): string;
+    getActualFullDate(): string;
 }

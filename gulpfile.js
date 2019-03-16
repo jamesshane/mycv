@@ -115,6 +115,11 @@ gulp.task("default", [
   "pdf-copy"
 ]);
 
+gulp.task("script", [
+  "ts-copy",
+  "js-copy",
+]);
+
 gulp.task("design", [
   "html-copy",
   "css-copy",

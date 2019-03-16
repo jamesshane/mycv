@@ -1,9 +1,10 @@
 {
-  "name": "learnts",
+  "name": "mycv",
   "version": "1.0.0",
-  "description": "",
+  "description": "James' CV",
   "main": "./dist/main.js",
   "scripts": {
+    "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/jamesshane/learnts#readme",
   "devDependencies": {
+    "increase-memory-limit": "^1.0.3",
+    "cross-env": "^5.0.5",
     "@types/jquery": "^3.3.29",
     "browserify": "^16.2.3",
     "del": "^3.0.0",

@@ -2,9 +2,14 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-var options = {
+var homepage = {
   index: "index.html"
 };
+
+var emailpage = {
+  index: "emailform.html"
+};
+
 app.get('/example/a', function (req, res) {
   res.send('Hello from A!')
 })
@@ -24,5 +29,7 @@ var db = require('./db')(app);
 app.use('/', birds)
 
 
-app.use("/", express.static("../../public",options));
+app.use("/", express.static("../../public",homepage));
+app.use("/hireme", express.static("../../public",emailpage));
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

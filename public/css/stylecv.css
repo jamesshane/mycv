@@ -1,6 +1,7 @@
 /* font stuff */
 /* colors */
 /*border styles*/
+/*mixins*/
 body {
   font-family: "Lato", sans-serif; }
 
@@ -31,6 +32,10 @@ body {
   .download-template:hover {
     color: #000;
     background-color: #a9a9a9; }
+  .download-template .far {
+    padding-right: 5px;
+    color: red;
+    opacity: 0.75; }
 
 .gradient {
   background: linear-gradient(120deg, #000428, #004e92);
@@ -98,6 +103,10 @@ body {
         margin-top: 4px;
         color: #6c757d;
         opacity: 0.8; }
+        .cv-block.info .group .period .far {
+          padding-right: 5px;
+          color: red;
+          opacity: 0.75; }
       .cv-block.info .group .organization {
         font-size: 0.85em;
         background-color: #0ea0ff;

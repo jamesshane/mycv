@@ -8,6 +8,7 @@ $whiteOff: #eee;
 $whiteOffTwo: #ddd;
 $gray: #a9a9a9;
 $pink: #ed36ad;
+$red: red;
 $light-pink: #fb5ec4;
 $grad-start: #000428;
 $grad-end: #004e92;
@@ -22,6 +23,12 @@ $socialIconBGColor: #c5c9d2;
 /*border styles*/
 $borderSolid: solid;
 $borderDotted: dotted;
+/*mixins*/
+@mixin pdficon($padding, $color) {
+  padding-right: $padding;
+  color: $color;
+  opacity: 0.75;
+}
 
 body {
   font-family: $page-fonts;
@@ -55,8 +62,8 @@ body {
 
 .download-template {
   // visibility: hidden;
-    color: $gray;
-    background-color: $black;
+  color: $gray;
+  background-color: $black;
   border: none;
   font-weight: $bold;
   text-transform: uppercase;
@@ -64,8 +71,11 @@ body {
   padding: 10px 24px;
   border-radius: 40px;
   &:hover {
-  color: $black;
-  background-color: $gray;
+    color: $black;
+    background-color: $gray;
+  }
+  .far {
+    @include pdficon(5px, $red);
   }
 }
 
@@ -144,7 +154,7 @@ body {
     .publications {
       &.group {
         h3 {
-        font-size: 1.1rem;
+          font-size: 1.1rem;
         }
         .organization {
           background-color: $publicationsPlaceLabelColor;
@@ -164,6 +174,9 @@ body {
         margin-top: 4px;
         color: $timePeriod;
         opacity: 0.8;
+        .far {
+          @include pdficon(5px, $red);
+        }
       }
       .organization {
         font-size: 0.85em;

@@ -1,6 +1,7 @@
 var bodyParser = require("body-parser");
 var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017/";
+var sms = require( './sendsms' );
 
 var request = require('request');
 var cheerio = require('cheerio');
@@ -24,6 +25,7 @@ module.exports = function(app) {
       if (err) throw err;
       var dbo = db.db("mydb");
       var myobj = req.body;//{ name: "Company Inc", address: "Highway 37" };
+      sms.sendsms(req.body.path+" was visited");
       dbo.collection("visits").insertOne(myobj, function(err, res) {
         if (err) throw err;
         console.log("1 document inserted");

@@ -36,6 +36,8 @@ body {
     padding-right: 5px;
     color: red;
     opacity: 0.75; }
+  .download-template:not(:hover) i {
+    animation: none; }
 
 .gradient {
   background: linear-gradient(120deg, #000428, #004e92);

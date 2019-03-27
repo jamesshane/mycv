@@ -77,6 +77,11 @@ body {
   .far {
     @include pdficon(5px, $red);
   }
+  &:not(:hover) {
+    i {
+      animation: none;
+    }
+  }
 }
 
 .gradient {

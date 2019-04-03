@@ -25,7 +25,7 @@ module.exports = function(app) {
       if (err) throw err;
       var dbo = db.db("mydb");
       var myobj = req.body;//{ name: "Company Inc", address: "Highway 37" };
-      sms.sendsms(req.body.path+" was visited");
+      sms.sendsms(req.body.path+" was visited from "+req.body.city+", "+req.body.region);
       dbo.collection("visits").insertOne(myobj, function(err, res) {
         if (err) throw err;
         console.log("1 document inserted");
